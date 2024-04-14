@@ -30,7 +30,7 @@ $date = $_GET['date'];
 				Class: <input type="number" name="class" value="<?php echo $class?>">
 			</div>
 			<div>
-				password: <input type="date" name="date" value="<?php echo $date ?>">
+				Date:<input type="date" name="date" value="<?php echo $date ?>">
 			</div>
 			<div>
 				<input type="submit" value="Update" name="submit">

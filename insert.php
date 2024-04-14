@@ -5,6 +5,12 @@
 	<title>Document</title>
 </head>
 <body>
+		<?php
+			session_start();
+			if(isset($_SESSION['invailed'])){
+				echo $_SESSION['invailed'];
+			}
+		?>
 		<form action="signup.php" method="post">
 			<div>
 				Name: <input type="text" name="name">

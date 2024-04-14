@@ -8,9 +8,9 @@
 	$y_name=$_SESSION['user'];
 	
  }
- // if($y_name == ''){
-	 // header("location:index.php");
- // }
+ if($y_name == ''){
+	 header("location:index.php");
+  }
  
  
  
@@ -47,6 +47,12 @@
 	<a href="insert.php"><button>Insert Data</button></a>
 	<table border="2px" align="center">
 		<tr>
+			<th colspan="6" rowspan="2">Student Data</th>
+		</tr>
+		<tr>
+		</tr>
+		<tr>
+			
 			<th>Serial No.</th>
 			<th>Name</th>
 			<th>Father's Name</th>

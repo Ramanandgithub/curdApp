@@ -33,22 +33,39 @@
 			$uname = $_POST['uname'];
 			$pass = $_POST['pass'];
 			
-			$sql = "select Stu_Name from `student` where Stu_Name='$uname'";
+			$sql = "select * from `student` where Stu_Name='$uname'";
 			$res = mysqli_query($conn,$sql);
 			
 			$row = mysqli_num_rows($res);
-			while($rows = mysqli_fetch_assoc($res)){
-				session_start();
-				$_SESSION['user'] = $rows['Stu_Name'];
+			
+			if($row == 1){
+				
+				while($rows = mysqli_fetch_assoc($res)){
+				
+				
+				if(password_verify($pass,$rows['Stu_password'])){
+					session_start();
+				    $_SESSION['user'] = $rows['Stu_Name'];
+					header("location:welcome.php");
+					
+					
+				}
+				else{
+					echo "Invailed Credential";
+					
+				}
+				}
+			}
+			else{
+				echo "Invailed Credential";
+				
+			}
+		
 				
 
-			}
-			if($row > 0){
-				header("location:welcome.php");
-			}else{
-				echo "something went wrong";
-				header("location:index.php");
-			}
+			
+				
+			
 		}
 	?>
 </body>

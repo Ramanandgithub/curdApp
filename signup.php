@@ -22,7 +22,10 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
 			}
 			
 		}else{
-			echo "Invailed password Please try again";
+			session_start();
+			$_SESSION['invailed'] = "Invailed password Please try again";
+			header("location:insert.php");
+			
 		}
 		
 		
